@@ -1,0 +1,3 @@
+[submodule "admin-console-web"]
+	path = admin-console-web
+	url = https://github.com/patryk-stepniak/admin-console-web.git
