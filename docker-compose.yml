@@ -18,7 +18,7 @@ services:
       - SPRING_DATASOURCE_PASSWORD=admin
       - SPRING_JPA_HIBERNATE_DDL_AUTO=update
     volumes:
-      - ./target/AdminConsole-0.0.1-SNAPSHOT.war:/usr/local/tomcat/webapps/ROOT.war
+      - ./admin-console-service/target/AdminConsole-0.0.1-SNAPSHOT.war:/usr/local/tomcat/webapps/ROOT.war
     expose:
       - "8080:8080"
     links:
