@@ -1,2 +1,0 @@
-INSERT INTO T_USER (USERNAME, PASSWORD, ACTIVE) VALUES ('Patryk', '$2a$10$6kIgPWjpIRzSQUWl6U0ReOtsoH4ipvv7wtyyw3eLg9cd47PeQO/l.', FALSE ),
-                                                       ('Admin', '$2a$10$6kIgPWjpIRzSQUWl6U0ReOtsoH4ipvv7wtyyw3eLg9cd47PeQO/l.', TRUE);

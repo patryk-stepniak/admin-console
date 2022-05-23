@@ -1,7 +1,7 @@
 # How to run the app
-### 1. In main location run "mvn clean package"
+### 1. Go to admin-console-service and run "mvn clean package"
 ### 2. Go to admin-console-web, run "npm install" and then "ng build"
-### 3. Go back to main location and run "docker-compose up"
+### 3. In main location run "docker-compose up"
 ### 4. Open your browser and go to http://localhost:4200/
 
 
