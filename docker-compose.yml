@@ -11,8 +11,8 @@ services:
     image: nginx:1.17.1-alpine
     container_name: frontend
     volumes:
-      - ./web/Console/nginx.conf:/etc/nginx/nginx.conf
-      - ./web/Console/dist/console:/usr/share/nginx/html
+      - ./admin-console-web/nginx.conf:/etc/nginx/nginx.conf
+      - ./admin-console-web/dist/console:/usr/share/nginx/html
     ports:
       - "4200:4200"
     links:
