@@ -1,0 +1,21 @@
+version: "3.9"
+services:
+  backend:
+    image: tomcat:9.0.56-jdk17-temurin
+    container_name: backend
+    volumes:
+      - ./target/AdminConsole-0.0.1-SNAPSHOT.war:/usr/local/tomcat/webapps/ROOT.war
+    expose:
+      - "8080:8080"
+  frontend:
+    image: nginx:1.17.1-alpine
+    container_name: frontend
+    volumes:
+      - ./web/Console/nginx.conf:/etc/nginx/nginx.conf
+      - ./web/Console/dist/console:/usr/share/nginx/html
+    ports:
+      - "4200:4200"
+    links:
+      - backend
+    depends_on:
+      - backend
