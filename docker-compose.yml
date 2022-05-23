@@ -1,12 +1,30 @@
 version: "3.9"
 services:
+  postgresql:
+    image: 'postgres:alpine3.15'
+    container_name: database
+    environment:
+      - POSTGRES_USER=admin
+      - POSTGRES_PASSWORD=admin
+      - POSTGRES_DB=db
+    volumes:
+      - ./db_data:/var/lib/postgresql/data
   backend:
     image: tomcat:9.0.56-jdk17-temurin
     container_name: backend
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://database:5432/db
+      - SPRING_DATASOURCE_USERNAME=admin
+      - SPRING_DATASOURCE_PASSWORD=admin
+      - SPRING_JPA_HIBERNATE_DDL_AUTO=update
     volumes:
       - ./target/AdminConsole-0.0.1-SNAPSHOT.war:/usr/local/tomcat/webapps/ROOT.war
     expose:
       - "8080:8080"
+    links:
+      - postgresql
+    depends_on:
+      - postgresql
   frontend:
     image: nginx:1.17.1-alpine
     container_name: frontend
